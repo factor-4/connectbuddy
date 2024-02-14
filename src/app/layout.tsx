@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 
 import "./globals.css";
 import ThemeProvider from "@/providers/theme-provider";
+import { ClerkProvider } from "@clerk/nextjs";
 
 
 
@@ -16,13 +17,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body >
-        <ThemeProvider>
-          {children}
-        </ThemeProvider>
+    <ClerkProvider>
+      <html lang="en">
+        <body >
+          <ThemeProvider>
+            {children}
+          </ThemeProvider>
 
-      </body>
-    </html>
+        </body>
+      </html>
+    </ClerkProvider>
+
   );
 }
