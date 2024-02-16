@@ -3,6 +3,7 @@ import { UserButton, currentUser } from "@clerk/nextjs";
 
 export default async function Home() {
   const loggedInUserData = await currentUser();
+  console.log('loggedinuser ', loggedInUserData)
 
 
   
