@@ -1,4 +1,7 @@
+import { connectMongoDB } from "@/config/db-config";
 import { UserButton, currentUser } from "@clerk/nextjs";
+
+connectMongoDB();
 
 
 export default async function Home() {
